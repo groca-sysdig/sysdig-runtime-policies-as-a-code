@@ -11,7 +11,7 @@ env:
  # verbosity setting for Terraform logs
  TF_LOG: INFO
  # Credentials for deployment to Sysdig Secure
- sysdig_api_token : ${{ secrets.SYSDIG_API_TOKEN }}
+ TF_VAR_sysdig_api_token : ${{ secrets.SYSDIG_API_TOKEN }}
 
    
 permissions:
