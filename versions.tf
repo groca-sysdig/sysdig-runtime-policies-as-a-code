@@ -5,4 +5,11 @@ terraform {
       version = ">=0.5"
     }
   }
+  cloud {
+    organization = "grocamador"
+
+    workspaces {
+      name = "github-actions"
+    }
+  }
 }
