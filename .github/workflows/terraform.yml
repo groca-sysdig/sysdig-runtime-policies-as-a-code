@@ -1,19 +1,26 @@
-name: 'Terraform'
+name: 'Sysdig Runtime as a Code with Terraform and GitHub actions'
 
 on:
   push:
     branches: [ "main" ]
   pull_request:
+   branches:
+   - main
+   
+env:
+ # verbosity setting for Terraform logs
+ TF_LOG: INFO
+ # Credentials for deployment to Sysdig Secure
+ sysdig_api_token : ${{ secrets.SYSDIG_API_TOKEN }}
 
+   
 permissions:
   contents: read
 
 jobs:
   terraform:
-    name: 'Terraform'
+    name: 'Terraform IAC'
     runs-on: ubuntu-latest
-    environment: production
-
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
