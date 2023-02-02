@@ -6,7 +6,7 @@ on:
   pull_request:
    branches:
    - main
-   
+
 env:
  # verbosity setting for Terraform logs
  TF_LOG: INFO
@@ -21,6 +21,7 @@ jobs:
   terraform:
     name: 'Terraform IAC'
     runs-on: ubuntu-latest
+    environment: Sysdig-prod
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
