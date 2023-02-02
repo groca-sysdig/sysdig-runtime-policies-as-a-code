@@ -7,19 +7,20 @@ resource "sysdig_secure_policy" "workload-policy-gitops" {
   runbook = "https://runbook.com"
 
   // Scope selection
-  scope = "namespace.id = test"
+  scope = "container.id != \"\""
 
   // Rule selection
-  rule_names = ["Terminal shell in container"]
+  rule_names = ["gitops - Terminal shell in container","gitops - Connect EC2 Instance Metadata from container"]
 
   actions {
     container = "stop"
     capture {
+      name = "gitops-security-capture"
       seconds_before_event = 5
       seconds_after_event = 10
     }
   }
-
-  notification_channels = [10000]
+## To be delated if not using notifications or to change value from the Terraform output
+  notification_channels = [40366]
 
 }
