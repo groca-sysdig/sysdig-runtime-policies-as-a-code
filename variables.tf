@@ -1,5 +1,5 @@
 variable "sysdig_api_token" {
-  default = "7c09436b-a6f6-49dd-81cd-f83400326589"
+  default = "XXXXXXX"
 }
 variable "sysdig_saas_region" {
   default = "https://eu1.app.sysdig.com"
