@@ -1,4 +1,4 @@
-# sysdig-runtime-policies-as-a-code
+# Sysdig Runtime Policies as a code
 Manage Sysdig runtime policies on a GitOps fashion
 
 ## Table of contents
