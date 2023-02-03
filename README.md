@@ -26,7 +26,7 @@ From the `versions.tf` delete the section that refers to my Terraform cloud orga
 
 ![Example screenshot](./img/delete-TF-organization-versions.png)
 
-Modify the following variable values either by changing `variables.tf`, creating a new `.tfvars` file or use an environment variable `export TF_VAR_sysdig_variable`
+Modify the following variable values either by changing `variables.tf` values, creating a new `.tfvars` file or use an environment variable `export TF_VAR_sysdig_variable`
 
 ```
 sysdig_api_token= ""
@@ -40,10 +40,17 @@ mail_users= ["mail1","mail2"]
 
 - For `sysdig_saas_region` please check the SaaS endpoint in the [SaaS Regions and IP Ranges](https://docs.sysdig.com/en/docs/administration/saas-regions-and-ip-ranges/) documentation
 
+Make sure you have installed Terraform on your local machine and initialize it:
+
+$terraform init
+
+Create an execution plan
+
+$terraform plan
 
 
 ### GitOps installation with GitHub Actions and Terraform Cloud
-blablabla
+blablabla WIP
 
 
 
