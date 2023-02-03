@@ -18,5 +18,5 @@ The example configuration supports building custom Falco rules and runtime custo
 
 
 
-[Falco]:(https://falco.org)
-[Falco rule]:(https://falco.org/docs/rules/)
+[Falco]: (https://falco.org)
+[Falco rule]: (https://falco.org/docs/rules/)
