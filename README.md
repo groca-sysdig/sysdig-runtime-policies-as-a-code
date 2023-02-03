@@ -21,7 +21,13 @@ It can be use in 2 different ways:
 * Using Terraform with GitHub Actions to manage and mantain Sysdig runtime policies with [GitOps approach](#Gitops-approach)
 
 ### Standalone Installation
-Blablabla
+Clone the repository, you can then delete the or ignore the `.github/workflows` folder.
+From the `versions.tf` delete the section that refers to my Terraform cloud organization
+![Example screenshot](./img/screenshot.png)
+
+From the `variables.tf` change your variable definitions on a new (.tfvars) file or use an environment variable
+
+.b, [fetch the Sysdig Api Token](https://docs.sysdig.com/en/docs/administration/administration-settings/user-profile-and-password/retrieve-the-sysdig-api-token) from Sysdig Secure platform 
 
 ### GitOps installation with GitHub Actions and Terraform Cloud
 blablabla
