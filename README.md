@@ -21,14 +21,26 @@ It can be use in 2 different ways:
 * Using Terraform with GitHub Actions to manage and mantain Sysdig runtime policies with [GitOps approach](#Gitops-approach)
 
 ### Standalone Installation
-Clone the repository, you can then delete the or ignore the `.github/workflows` folder.
+Clone the repository, you can then delete  or ignore the `.github/workflows` folder.
 From the `versions.tf` delete the section that refers to my Terraform cloud organization
 
 ![Example screenshot](./img/delete-TF-organization-versions.png)
 
-From the `variables.tf` change your variable definitions on a new (.tfvars) file or use an environment variable
+Modify the following variable values either by changing `variables.tf`, creating a new `.tfvars` file or use an environment variable `export TF_VAR_sysdig_variable`
 
-.b, [fetch the Sysdig Api Token](https://docs.sysdig.com/en/docs/administration/administration-settings/user-profile-and-password/retrieve-the-sysdig-api-token) from Sysdig Secure platform 
+```
+sysdig_api_token= ""
+sysdig_saas_region= ""
+#Optional
+mail_users= ["mail1","mail2"]
+
+```
+- For `sysdig_api_token` [fetch the Sysdig Api Token](https://docs.sysdig.com/en/docs/administration/administration-settings/user-profile-and-password/retrieve-the-sysdig-api-token) from the Sysdig Secure platform.
+
+
+- For `sysdig_saas_region` please check the SaaS endpoint in the [SaaS Regions and IP Ranges](https://docs.sysdig.com/en/docs/administration/saas-regions-and-ip-ranges/) documentation
+
+
 
 ### GitOps installation with GitHub Actions and Terraform Cloud
 blablabla
