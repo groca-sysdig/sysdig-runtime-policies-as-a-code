@@ -5,8 +5,11 @@ This is an example of how to manage Sysdig runtime policies with a GitOps approa
 
 ## What does it do?
 The example configuration supports building custom Falco rules and runtime custom policies for any Workload, Kubernetes and AWS cloud trail. It also allows to configure specific actions and notifications when the alert is triggered.
->What is [Falco](https://falco.org Falco Homepage")?
->What is a [Falco rule](https://falco.org/docs/rules/)?
->What is a Sysdig runtime custom policy?
+--* What is [Falco]?
+--* What is a [Falco rule]?
+--* What is a Sysdig runtime custom policy?
 
 
+
+[Falco]:(https://falco.org)
+[Falco rule]:(https://falco.org/docs/rules/)
