@@ -23,7 +23,8 @@ It can be use in 2 different ways:
 ### Standalone Installation
 Clone the repository, you can then delete the or ignore the `.github/workflows` folder.
 From the `versions.tf` delete the section that refers to my Terraform cloud organization
-![Example screenshot](./img/screenshot.png)
+
+![Example screenshot](./img/delete-TF-organization-versions.png)
 
 From the `variables.tf` change your variable definitions on a new (.tfvars) file or use an environment variable
 
