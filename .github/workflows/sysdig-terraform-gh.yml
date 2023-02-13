@@ -20,7 +20,7 @@ permissions:
 
 jobs:
   terraform:
-    name: 'Sysdig-aaC - TF and GH
+    name: 'Sysdig-aaC - TF and GH'
     runs-on: ubuntu-latest
     environment: Sysdig-prod
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
