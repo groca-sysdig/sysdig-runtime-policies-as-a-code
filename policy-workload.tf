@@ -10,7 +10,7 @@ resource "sysdig_secure_policy" "workload-policy-gitops" {
   scope = "container.id != \"\""
 
   // Rule selection
-  rule_names = ["gitops - Terminal shell in container","gitops - Connect EC2 Instance Metadata from container"]
+  rule_names = ["gitops - Terminal shell in container"]
 
   actions {
     container = "stop"
