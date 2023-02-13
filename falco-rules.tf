@@ -1,4 +1,4 @@
-
+## Falco workload Rule 1
 resource "sysdig_secure_rule_falco" "falco_example_rule" {
   name        = "gitops - Terminal shell in container" // ID
   description = "A shell was used as the entrypoint/exec point into a container with an attached terminal."
@@ -37,7 +37,7 @@ resource "sysdig_secure_rule_falco" "falco_example_rule" {
   }
 }
 
-
+## Falco workload Rule 2
 resource "sysdig_secure_rule_falco" "falco_example_rule_2" {
   name        = "gitops - Connect EC2 Instance Metadata from container" // ID
   description = "Detect attempts to contact the EC2 Instance Metadata Service from a container"
