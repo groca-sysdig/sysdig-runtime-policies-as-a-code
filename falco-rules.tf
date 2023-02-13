@@ -63,11 +63,10 @@ resource "sysdig_secure_rule_container" "falco_cloudtrail_1" {
   name = "gitops - Attach an administrator policy to a user"
   description = " Detect attaching an administrator policy to a user."
   tags = ["aws", "gitops"]
-  condition = "aws.eventName=\"AttachUserPolicy\" and not aws.errorCode exists and  \" and ec2_metadata_containers\ and jevt.value[/requestParameters/policyArn]=\"arn:aws:iam::aws:policy/AdministratorAccess\""
+  condition = "aws.eventName=\"AttachUserPolicy\" and not aws.errorCode exists and jevt.value[/requestParameters/policyArn]=\"arn:aws:iam::aws:policy/AdministratorAccess\""
   output    = "An administrator policy has been attached to an user (requesting user=%aws.user, requesting IP=%aws.sourceIP, AWS region=%aws.region,arn=%jevt.value[/userIdentity/arn], user attached to=%jevt.value[/requestParameters/userName])"
   priority  = "notice"
   source    = "aws_cloudtrail" // syscall or k8s_audit
-  tags = ["aws", "gitops"]
 }
 
 
