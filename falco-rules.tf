@@ -49,17 +49,8 @@ resource "sysdig_secure_rule_falco" "falco_example_rule_2" {
   source    = "syscall" // syscall or k8s_audit
 
 }
-## Falco Container Rule 
-resource "sysdig_secure_rule_container" "falco_container" {
-  name = "gitops - Nginx container spawned"
-  description = "A container withthe nginx image spawned in the cluster."
-  tags = ["gitops","container", "cis"]
-
-  matching = true // default
-  containers = ["gitops","nginx"]
-}
 ## Falco Cloudtrail Rule 
-resource "sysdig_secure_rule_container" "falco_cloudtrail_1" {
+resource "sysdig_secure_rule_falco" "falco_cloudtrail_1" {
   name = "gitops - Attach an administrator policy to a user"
   description = " Detect attaching an administrator policy to a user."
   tags = ["aws", "gitops"]
@@ -68,6 +59,16 @@ resource "sysdig_secure_rule_container" "falco_cloudtrail_1" {
   priority  = "notice"
   source    = "aws_cloudtrail" // syscall or k8s_audit
 }
+## Sysdig Container Rule 
+resource "sysdig_secure_rule_container" "sysdig_container" {
+  name = "gitops - Nginx container spawned"
+  description = "A container withthe nginx image spawned in the cluster."
+  tags = ["gitops","container", "cis"]
+
+  matching = true // default
+  containers = ["gitops","nginx"]
+}
+
 
 
 
