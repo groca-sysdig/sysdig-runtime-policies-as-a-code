@@ -65,12 +65,17 @@ $terraform apply
 ### GitOps installation with GitHub Actions and Terraform Cloud
 
 ## Terraform cloud configuration
+Log in or create your free account on [Terraform Cloud](https://app.terraform.io/)
 
-![Example screenshot](./img/delete-TF-organization-versions.png)
+Choose or create a new workspace:
 
-![Example screenshot](./img/delete-TF-organization-versions.png)
+![Example screenshot](./img/tf-workspace)
 
-Update the `versions.tf` with the values just created on Terraform cloud:
+Create a dedicated Terraform API token for this project and copy the value:
+
+![Example screenshot](./img/tf-token)
+
+Update the `versions.tf` with the Terraform cloud organization and the workspace just created.
 
 ```
 terraform {
@@ -90,9 +95,17 @@ terraform {
 }
 ```
 ## GitHub configuration
+Modify the following variable values either by changing `variables.tf` values, creating a new `.tfvars` file or use an environment variable on GitHub actions:
 
-![Example screenshot](./img/delete-TF-organization-versions.png)
-![Example screenshot](./img/delete-TF-organization-versions.png)
+```
+sysdig_saas_region= ""
+#Optional
+mail_users= ["mail1","mail2"]
+````
+
+Create a new GitHub environment:
+![Example screenshot](./img/github-environment)
+
 
 Update the `.github/workflows/terraform.yml` with the name of the GitHub environment configured in the previous steps:
 
@@ -123,4 +136,8 @@ jobs:
     environment: <environment-name>
 ...
 ```
+Create two secrets under the environment just created
+![Example screenshot](./img/github-secrets)
 
+- For `SYSDIG_API_TOKEN` [fetch the Sysdig Api Token](https://docs.sysdig.com/en/docs/administration/administration-settings/user-profile-and-password/retrieve-the-sysdig-api-token) from the Sysdig Secure platform.
+- For the `TF_API_TOKEN` secret use the value of the token created under [Terraform cloud configuration](## Terraform cloud configuration)
