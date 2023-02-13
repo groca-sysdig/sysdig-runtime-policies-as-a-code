@@ -95,7 +95,7 @@ terraform {
 }
 ```
 ## GitHub configuration
-Modify the following variable values either by changing `variables.tf` values, creating a new `.tfvars` file or use an environment variable on GitHub actions:
+Modify the following variable values either by changing `variables.tf` values, creating a new `.tfvars` file or using an environment variable on GitHub actions:
 
 ```
 sysdig_saas_region= ""
@@ -103,11 +103,11 @@ sysdig_saas_region= ""
 mail_users= ["mail1","mail2"]
 ````
 
-Create a new GitHub environment:
+Create a new GitHub environment (in this case is `Sysdig-prod`):
 ![Example screenshot](./img/github-environment)
 
 
-Update the `.github/workflows/terraform.yml` with the name of the GitHub environment configured in the previous steps:
+Update the GitHub actions definition at `.github/workflows/terraform.yml` with the name of the GitHub environment configured in the previous steps:
 
 ```
 name: 'Sysdig Runtime as a Code with Terraform and GitHub actions'
