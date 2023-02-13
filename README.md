@@ -46,16 +46,43 @@ mail_users= ["mail1","mail2"]
 
 Make sure you have installed Terraform on your local machine and initialize it:
 
+```
 $terraform init
+```
 
 Create an execution plan
 
+```
 $terraform plan
+```
+Apply the proposed actions
 
+
+```
+$terraform apply
+```
 
 ### GitOps installation with GitHub Actions and Terraform Cloud
 blablabla WIP
 
+Update the `versions.tf` with the values just created on Terraform cloud:
 
+```
+terraform {
+  required_providers {
+    sysdig = {
+      source = "sysdiglabs/sysdig"
+      version = ">=0.5"
+    }
+  }
+   cloud {
+    organization = "<your-tf-organization>"
+
+    workspaces {
+      name = "<your-tf-worspace>"
+    }
+  }
+  ```
+}
 
 
