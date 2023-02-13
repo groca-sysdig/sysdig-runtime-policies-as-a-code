@@ -16,7 +16,9 @@ This is an example of how to manage Sysdig runtime policies with a GitOps approa
 The example configuration supports defining custom [Falco](https://falco.org) rules and runtime custom policies for any Workload, Kubernetes and AWS cloud trail by using the Sysdig Terraform provider. It also allows to create and mantain mail notifications and then configure it when an alert is triggered.
 
 ## Requirements
-BLABA
+> A Sysdig Secure platform with a runtime administrator API token 
+> A GitHub dedicated repository (Optional for working on GitOps with GigHub actions)
+> A [Terraform Cloud](https://app.terraform.io/) account, you can create one for free (Optonal for working on GitOps with GitHub actions)
 
 ## Setup
 It can be use in 2 different ways:
@@ -63,6 +65,7 @@ $terraform apply
 ```
 
 ### GitOps installation with GitHub Actions and Terraform Cloud
+Fork or clone this Git repository, you will then need a Terraform cloud workspace to store the state of  
 
 ## Terraform cloud configuration
 Log in or create your free account on [Terraform Cloud](https://app.terraform.io/)
