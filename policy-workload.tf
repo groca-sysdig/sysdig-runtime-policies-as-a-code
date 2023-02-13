@@ -21,6 +21,6 @@ resource "sysdig_secure_policy" "workload-policy-gitops" {
     }
   }
 ## To be delated if not using notifications or to change value from the Terraform output
-  notification_channels = [40379]
+#  notification_channels = [40379]
 
 }
