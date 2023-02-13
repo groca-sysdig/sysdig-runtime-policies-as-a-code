@@ -44,6 +44,8 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init
+    - name: Terraform destroy
+      run: terraform destroy -input=false
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
