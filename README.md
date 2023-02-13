@@ -63,7 +63,12 @@ $terraform apply
 ```
 
 ### GitOps installation with GitHub Actions and Terraform Cloud
-blablabla WIP
+
+## Terraform cloud configuration
+
+![Example screenshot](./img/delete-TF-organization-versions.png)
+
+![Example screenshot](./img/delete-TF-organization-versions.png)
 
 Update the `versions.tf` with the values just created on Terraform cloud:
 
@@ -82,7 +87,40 @@ terraform {
       name = "<your-tf-worspace>"
     }
   }
-  ```
 }
+```
+## GitHub configuration
 
+![Example screenshot](./img/delete-TF-organization-versions.png)
+![Example screenshot](./img/delete-TF-organization-versions.png)
+
+Update the `.github/workflows/terraform.yml` with the name of the GitHub environment configured in the previous steps:
+
+```
+name: 'Sysdig Runtime as a Code with Terraform and GitHub actions'
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+   branches:
+   - main
+
+env:
+ # verbosity setting for Terraform logs
+ TF_LOG: INFO
+ # Credentials for deployment to Sysdig Secure
+ TF_VAR_sysdig_api_token : ${{ secrets.SYSDIG_API_TOKEN }}
+
+   
+permissions:
+  contents: read
+
+jobs:
+  terraform:
+    name: 'Terraform IAC'
+    runs-on: ubuntu-latest
+    environment: <environment-name>
+...
+```
 
