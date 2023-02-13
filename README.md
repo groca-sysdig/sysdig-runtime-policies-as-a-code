@@ -28,7 +28,7 @@ It can be use in 2 different ways:
 
 ### Standalone Installation
 Clone the repository, you can then delete  or ignore the `.github/workflows` folder.
-From the `versions.tf` delete the section that refers to my Terraform cloud organization
+From the `versions.tf` delete the section that refers to my Terraform cloud organization:
 
 ![Example screenshot](./img/delete-TF-organization-versions.png)
 
@@ -107,6 +107,7 @@ mail_users= ["mail1","mail2"]
 ````
 
 Create a new GitHub environment (in this case is `Sysdig-prod`):
+
 ![Example screenshot](./img/github-environment)
 
 
