@@ -17,7 +17,7 @@ resource "sysdig_secure_policy" "container-policy-gitops" {
   }
   #Important to add if you want also rules created at the same time 
     depends_on = [
-      sysdig_secure_rule_container.sysdig_container
+      sysdig_secure_rule_container.sysdig_container,
       sysdig_secure_rule_network.sysdig_network_rule
   
   ]
