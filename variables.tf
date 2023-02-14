@@ -10,7 +10,7 @@ variable "enable_mail_notifications" {
 
 variable "mail_users" {
     type = list
-    default = ["testuser@mail.com"]
+    default = ["testuser@mail.com","test2@mail.com"]
 
 }
 
