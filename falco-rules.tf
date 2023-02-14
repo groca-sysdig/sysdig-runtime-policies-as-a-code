@@ -69,6 +69,24 @@ resource "sysdig_secure_rule_container" "sysdig_container" {
   containers = ["gitops","nginx"]
 }
 
+## Sysdig network container rule
 
+resource "sysdig_secure_rule_network" "sysdig_network_rule" {
+  name = "gitops - Disallowed SSH Connection"
+  description = "Detect any new ssh connection to a host other than those in an allowed group of hosts"
+  tags = ["gitops","network", "mitre_remote_service"]
 
+  block_inbound = true
+  block_outbound = true
+
+  tcp {
+    matching = true // default
+    ports = [22]
+  }
+
+  udp {
+    matching = true // default
+    ports = [22]
+  }
+}
 
