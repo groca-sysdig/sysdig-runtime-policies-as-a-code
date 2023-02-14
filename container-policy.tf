@@ -13,10 +13,6 @@ resource "sysdig_secure_policy" "container-policy-gitops" {
 
   actions {
     container = "stop"
-    capture {
-      seconds_before_event = 5
-      seconds_after_event = 10
-    }
   }
 
 #  notification_channels = [10000]
