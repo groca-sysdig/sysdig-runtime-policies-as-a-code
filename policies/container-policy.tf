@@ -15,7 +15,12 @@ resource "sysdig_secure_policy" "container-policy-gitops" {
   actions {
     container = "stop"
   }
-
+  #Important to add if you want also rules created at the same time 
+    depends_on = [
+      sysdig_secure_rule_container.sysdig_container
+      sysdig_secure_rule_network.sysdig_network_rule
+  
+  ]
 #  notification_channels = [10000]
 
 }
