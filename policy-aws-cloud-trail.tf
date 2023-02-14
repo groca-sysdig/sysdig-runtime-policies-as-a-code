@@ -11,7 +11,7 @@ resource "sysdig_secure_policy" "aws-policy-gitops" {
   // scope = "aws.accountId != \"\""
 
   // Rule selection
-  rule_names = ["Add AWS User to Group"]
+  rule_names = ["gitops - Attach an administrator policy to a user"]
 
   actions {
  
