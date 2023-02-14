@@ -1,7 +1,7 @@
 resource "sysdig_secure_policy" "workload-policy-gitops" {
 
   name = "workload-policy-gitops"
-  description = "custom managed policy operated with GitOps approach: GitHub actions + TF"
+  description = "custom Falco managed policy for Workload"
   severity = 4
   enabled = true
   runbook = "https://runbook.com"
