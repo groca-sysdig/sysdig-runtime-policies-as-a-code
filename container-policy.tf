@@ -1,5 +1,6 @@
 resource "sysdig_secure_policy" "container-policy-gitops" {
   name = "container-policy-gitops"
+  type = "list_matching"
   description = "Custom container managed policy operated with GitOps approach: GitHub actions + TF"
   severity = 4
   enabled = true
