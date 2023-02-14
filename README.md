@@ -151,6 +151,6 @@ Create two secrets under the environment just created:
 ![Example screenshot](./img/github-secrets)
 
 - For `SYSDIG_API_TOKEN` [fetch the Sysdig Api Token](https://docs.sysdig.com/en/docs/administration/administration-settings/user-profile-and-password/retrieve-the-sysdig-api-token) from the Sysdig Secure platform.
-- For the `TF_API_TOKEN` secret use the value of the token created under [Terraform cloud configuration](####terraform-cloud-configuration)
+- For the `TF_API_TOKEN` secret use the value of the token created under [Terraform cloud configuration](#terraform-cloud-configuration)
 
 
