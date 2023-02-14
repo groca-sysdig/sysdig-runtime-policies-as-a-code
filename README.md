@@ -73,7 +73,7 @@ $terraform apply
 ### GitOps installation with GitHub Actions and Terraform Cloud
 Fork or clone this Git repository, you will then need a Terraform cloud workspace to store the state of  
 
-## Terraform cloud configuration
+#### Terraform cloud configuration
 Log in or create your free account on [Terraform Cloud](https://app.terraform.io/)
 
 Choose or create a new workspace:
@@ -103,7 +103,7 @@ terraform {
   }
 }
 ```
-## GitHub configuration
+#### GitHub configuration
 Modify the following variable values either by changing `variables.tf` values, creating a new `.tfvars` file or using an environment variable on GitHub actions:
 
 ```
@@ -151,6 +151,6 @@ Create two secrets under the environment just created:
 ![Example screenshot](./img/github-secrets)
 
 - For `SYSDIG_API_TOKEN` [fetch the Sysdig Api Token](https://docs.sysdig.com/en/docs/administration/administration-settings/user-profile-and-password/retrieve-the-sysdig-api-token) from the Sysdig Secure platform.
-- For the `TF_API_TOKEN` secret use the value of the token created under [Terraform cloud configuration](##terraform-cloud-configuration)
+- For the `TF_API_TOKEN` secret use the value of the token created under [Terraform cloud configuration](####terraform-cloud-configuration)
 
 
