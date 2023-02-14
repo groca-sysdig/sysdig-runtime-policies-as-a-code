@@ -9,8 +9,12 @@ Manage Sysdig runtime policies on a GitOps fashion
 
 
 ## Overview
-This is an example of how to manage Sysdig runtime policies with a GitOps approach by using GitHub to version and manage the security policies and rules, Terraform to define the rules and polices as a code and GitHub Actions to automatically apply new commited changes into the Sysdig Secure platform.
-This repository contains Sysdig runtime rules and runtime policies definitions on Terraform aswell as the GitHub actions workflow needed to apply any new change automatically into Sysdig:
+This is an example of how to manage Sysdig runtime policies with a GitOps approach by using:
+- GitHub to version and manage the Sysdig runtime security policies and rules
+- Terraform configuration language to define the Sysdig runtime rules and polices as a code 
+- GitHub Actions and Terraform to automatically apply new commited changes into the Sysdig Secure platform.
+
+This repository contains Sysdig runtime rules and runtime policies definitions on Terraform aswell as the GitHub actions workflow needed to apply any new change automatically into Sysdig, here an overview of the workflow:
 
 ![workflow overview](./img/workflow)
 
