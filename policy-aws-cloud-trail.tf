@@ -16,6 +16,9 @@ resource "sysdig_secure_policy" "aws-policy-gitops" {
   actions {
  
   }
-## To be delated if not using notifications or to change value from the Terraform output
-
+#Needed if creating and assigning rules at the same time
+    depends_on = [
+      sysdig_secure_rule_falco.falco_cloudtrail_1
+  
+  ]
 }
