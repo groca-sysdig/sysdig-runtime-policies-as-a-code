@@ -21,6 +21,6 @@ resource "sysdig_secure_policy" "container-policy-gitops" {
       sysdig_secure_rule_network.sysdig_network_rule
   
   ]
-#  notification_channels = [10000]
+  notification_channels = [40498]
 
 }
