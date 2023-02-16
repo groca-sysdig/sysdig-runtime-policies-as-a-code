@@ -30,7 +30,7 @@ The example configuration supports defining custom [Falco](https://falco.org) ru
 It can be use in 2 different ways:
 
 * As a [Standalone](#standalone-installation) way to deploy Sysdig runtime policies and rules leveraging Terraform provider
-* Using Terraform with GitHub Actions to manage and mantain Sysdig runtime policies with [GitOps approach](#Gitops-approach)
+* Using Terraform with GitHub Actions to manage and mantain Sysdig runtime policies with [GitOps approach](#GitOps-installation-with-GitHub-Actions-and-Terraform-Cloud)
 
 ### Standalone Installation
 Clone the repository, you can then delete  or ignore the `.github/workflows` folder.
