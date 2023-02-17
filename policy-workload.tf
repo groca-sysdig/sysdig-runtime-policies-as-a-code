@@ -13,7 +13,7 @@ resource "sysdig_secure_policy" "workload-policy-gitops" {
   rule_names = ["gitops - Terminal shell in container"]
 
   actions {
-#   container = "stop"
+   container = "stop"
     capture {
       name = "gitops-security-capture"
       seconds_before_event = 5
