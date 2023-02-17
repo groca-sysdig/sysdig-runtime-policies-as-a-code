@@ -1,5 +1,5 @@
 # Sysdig Runtime Policies as a code
-Manage Sysdig runtime policies on a GitOps fashion
+Manage Sysdig runtime policies as a code.
 
 ## Table of contents
 * [Overview](#overview)
@@ -9,7 +9,7 @@ Manage Sysdig runtime policies on a GitOps fashion
 
 
 ## Overview
-This is an example of how to manage Sysdig runtime policies with a GitOps approach by using:
+This is an example of how to manage Sysdig runtime policies as a code with a GitHub actions and Terraform cloud:
 - GitHub to version and manage the Sysdig runtime security policies and rules
 - Terraform configuration language to define the Sysdig runtime rules and polices as a code 
 - GitHub Actions and Terraform to automatically apply new commited changes into the Sysdig Secure platform.
@@ -23,14 +23,14 @@ The example configuration supports defining custom [Falco](https://falco.org) ru
 
 ## Requirements
 - A Sysdig Secure platform with a runtime administrator API token 
-- A GitHub dedicated repository (Optional for working on GitOps with GigHub actions)
-- A [Terraform Cloud](https://app.terraform.io/) account, you can create one for free (Optonal for working on GitOps with GitHub actions)
+- A GitHub dedicated repository (Optional for working with GigHub actions)
+- A [Terraform Cloud](https://app.terraform.io/) account, you can create one for free (Optonal for working on with GitHub actions)
 
 ## Setup
 It can be use in 2 different ways:
 
 * As a [Standalone](#standalone-installation) way to deploy Sysdig runtime policies and rules leveraging Terraform provider
-* Using Terraform with GitHub Actions to manage and mantain Sysdig runtime policies with [GitOps approach](#GitOps-installation-with-GitHub-Actions-and-Terraform-Cloud)
+* Using Terraform with GitHub Actions to manage and mantain Sysdig runtime policies with [with GitHub Actions](#installation-with-GitHub-Actions-and-Terraform-Cloud)
 
 ### Standalone Installation
 Clone the repository, you can then delete  or ignore the `.github/workflows` folder.
@@ -70,7 +70,7 @@ Apply the proposed actions
 $terraform apply
 ```
 
-### GitOps installation with GitHub Actions and Terraform Cloud
+### Installation with GitHub Actions and Terraform Cloud
 Fork or clone this Git repository, you will then need a Terraform cloud workspace to store the state of  
 
 #### Terraform cloud configuration
