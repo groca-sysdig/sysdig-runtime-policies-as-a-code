@@ -71,7 +71,7 @@ $terraform apply
 ```
 
 ### Installation with GitHub Actions and Terraform Cloud
-Fork or clone this Git repository, you will then need a Terraform cloud workspace to store the state of  
+Fork or clone this Git repository, you will then need a Terraform cloud workspace to store the Terraform state. 
 
 #### Terraform cloud configuration
 Log in or create your free account on [Terraform Cloud](https://app.terraform.io/)
@@ -153,4 +153,4 @@ Create two secrets under the environment just created:
 - For `SYSDIG_API_TOKEN` [fetch the Sysdig Api Token](https://docs.sysdig.com/en/docs/administration/administration-settings/user-profile-and-password/retrieve-the-sysdig-api-token) from the Sysdig Secure platform.
 - For the `TF_API_TOKEN` secret use the value of the token created under [Terraform cloud configuration](#terraform-cloud-configuration)
 
-
+Make some change in any TF file, push the changes to the main branch and let GitHub actions and Terraform build the security policy and rules for you.
