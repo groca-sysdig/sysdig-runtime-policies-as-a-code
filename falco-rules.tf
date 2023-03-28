@@ -59,6 +59,18 @@ resource "sysdig_secure_rule_falco" "falco_cloudtrail_1" {
   priority  = "notice"
   source    = "aws_cloudtrail" // syscall or k8s_audit
 }
+
+## Falco Azure activity Rule 
+resource "sysdig_secure_rule_falco" "falco_azure_1" {
+  name = "gitops - Azure Deactivate MFA for User Access"
+  description = " Detect Azure Deactivate MFA for User Access"
+  tags = ["azure", "gitops"]
+  condition = "jevt.value[/operationName]=\"Disable Strong Authentication\" and jevt.value[/properties/result]=\"success\""
+  output    = "Multi-factor authentication configuration has been disabled for a user (requesting user=%jevt.value[/properties/initiatedBy/user/userPrincipalName], requesting IP=%jevt.value[/properties/initiatedBy/user/ipAddress], target user=%jevt.value[/properties/targetResources/0/userPrincipalName])"
+  priority  = "notice"
+  source    = "azure_platformlogs" // syscall or k8s_audit
+}
+
 ## Sysdig Container Rule 
 resource "sysdig_secure_rule_container" "sysdig_container" {
   name = "gitops - Nginx container spawned"
