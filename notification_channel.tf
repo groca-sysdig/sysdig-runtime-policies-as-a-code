@@ -1,4 +1,4 @@
-resource "sysdig_secure_notification_channel_email" "sample_email" {
+resource "sysdig_secure_notification_channel_email" "[GRO]_sample_email" {
     name                    = "Example Channel - Email"
     recipients              = var.mail_users
     enabled                 = var.enable_mail_notifications

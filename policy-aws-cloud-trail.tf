@@ -1,4 +1,4 @@
-resource "sysdig_secure_policy" "aws-policy-hashitalk" {
+resource "sysdig_secure_policy" "[GRO]aws-policy-hashitalk" {
 
   name = "aws-policy-gitops"
   type = "aws_cloudtrail"
@@ -17,7 +17,7 @@ resource "sysdig_secure_policy" "aws-policy-hashitalk" {
  
   }
 #Needed if creating and assigning rules at the same time
-    dependhs_on = [
+    depends_on = [
       sysdig_secure_rule_falco.falco_cloudtrail_1
   
   ]
