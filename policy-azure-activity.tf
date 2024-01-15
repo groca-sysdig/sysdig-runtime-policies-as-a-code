@@ -1,4 +1,4 @@
-resource "sysdig_secure_policy" "azure-policy-hashitalk" {
+resource "sysdig_secure_policy" "[GRO]azure-policy-hashitalk" {
 
   name = "azure-policy-gitops"
   type = "azure_platformlogs"

@@ -1,4 +1,4 @@
-resource "sysdig_secure_policy" "workload-policy-hasthitalk" {
+resource "sysdig_secure_policy" "[GRO]workload-policy-hasthitalk" {
 
   name = "workload-policy-hashitalk"
   description = "custom Falco managed policy for Workload"
