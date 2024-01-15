@@ -17,7 +17,7 @@ resource "sysdig_secure_policy" "aws-policy-hashitalk" {
  
   }
 #Needed if creating and assigning rules at the same time
-    depends_on = [
+    dependhs_on = [
       sysdig_secure_rule_falco.falco_cloudtrail_1
   
   ]
