@@ -1,6 +1,6 @@
-resource "sysdig_secure_policy" "[GRO]azure-policy-hashitalk" {
+resource "sysdig_secure_policy" "azure-policy-hashitalk" {
 
-  name = "azure-policy-gitops"
+  name = "[GRO]azure-policy-gitops"
   type = "azure_platformlogs"
   description = "Custom managed policy operated with GitOps approach: GitHub actions + TF"
   severity = 4

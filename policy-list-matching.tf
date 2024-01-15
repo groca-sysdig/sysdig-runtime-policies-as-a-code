@@ -1,5 +1,5 @@
-resource "sysdig_secure_policy" "[GRO]container-policy-hashitalk" {
-  name = "list-matching-policy-hashitalk"
+resource "sysdig_secure_policy" "container-policy-hashitalk" {
+  name = "[GRO]list-matching-policy-hashitalk"
   type = "list_matching"
   description = "Custom container managed policy operated with Gitops approach: GitHub actions + TF"
   severity = 4
