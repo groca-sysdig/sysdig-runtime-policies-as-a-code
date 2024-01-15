@@ -49,56 +49,58 @@ resource "sysdig_secure_rule_falco" "falco_example_rule_2" {
   source    = "syscall" // syscall or k8s_audit
 
 }
-## Falco Cloudtrail Rule 
-resource "sysdig_secure_rule_falco" "falco_cloudtrail_1" {
-  name = "gitops - Attach an administrator policy to a user"
-  description = " Detect attaching an administrator policy to a user."
-  tags = ["aws", "gitops"]
-  condition = "aws.eventName=\"AttachUserPolicy\" and not aws.errorCode exists and jevt.value[/requestParameters/policyArn]=\"arn:aws:iam::aws:policy/AdministratorAccess\""
-  output    = "An administrator policy has been attached to an user (requesting user=%aws.user, requesting IP=%aws.sourceIP, AWS region=%aws.region,arn=%jevt.value[/userIdentity/arn], user attached to=%jevt.value[/requestParameters/userName])"
-  priority  = "notice"
-  source    = "aws_cloudtrail" // syscall or k8s_audit
-}
+
 
 ## Falco Azure activity Rule 
 resource "sysdig_secure_rule_falco" "falco_azure_1" {
   name = "gitops - Azure Deactivate MFA for User Access"
   description = " Detect Azure Deactivate MFA for User Access"
-  tags = ["azure", "gitops"]
+  tags = ["azure", "hashitalk", "gitops"]
   condition = "jevt.value[/operationName]=\"Disable Strong Authentication\" and jevt.value[/properties/result]=\"success\""
   output    = "Multi-factor authentication configuration has been disabled for a user (requesting user=%jevt.value[/properties/initiatedBy/user/userPrincipalName], requesting IP=%jevt.value[/properties/initiatedBy/user/ipAddress], target user=%jevt.value[/properties/targetResources/0/userPrincipalName])"
   priority  = "notice"
   source    = "azure_platformlogs" // syscall or k8s_audit
 }
 
-## Sysdig Container Rule 
-resource "sysdig_secure_rule_container" "sysdig_container" {
-  name = "gitops - Nginx container spawned"
-  description = "A container withthe nginx image spawned in the cluster."
-  tags = ["gitops","container", "cis"]
+# ## Sysdig Container Rule 
+# resource "sysdig_secure_rule_container" "sysdig_container" {
+#   name = "gitops - Nginx container spawned"
+#   description = "A container withthe nginx image spawned in the cluster."
+#   tags = ["gitops","hashitalk","container", "cis"]
 
-  matching = true // default
-  containers = ["gitops","nginx"]
-}
+#   matching = true // default
+#   containers = ["gitops","nginx"]
+# }
 
-## Sysdig network container rule
+# ## Sysdig network container rule
 
-resource "sysdig_secure_rule_network" "sysdig_network_rule" {
-  name = "gitops - Disallowed SSH Connection"
-  description = "Detect any new ssh connection to a host other than those in an allowed group of hosts"
-  tags = ["gitops","network", "mitre_remote_service"]
+# resource "sysdig_secure_rule_network" "sysdig_network_rule" {
+#   name = "gitops - Disallowed SSH Connection"
+#   description = "Detect any new ssh connection to a host other than those in an allowed group of hosts"
+#   tags = ["gitops","hashitalk","network", "mitre_remote_service"]
 
-  block_inbound = true
-  block_outbound = true
+#   block_inbound = true
+#   block_outbound = true
 
-  tcp {
-    matching = true // default
-    ports = [22]
-  }
+#   tcp {
+#     matching = true // default
+#     ports = [22]
+#   }
 
-  udp {
-    matching = true // default
-    ports = [22]
-  }
-}
+#   udp {
+#     matching = true // default
+#     ports = [22]
+#   }
+# }
 
+## Falco Cloudtrail Rule 
+/* resource "sysdig_secure_rule_falco" "falco_cloudtrail_1" {
+  name = "gitops - Attach an administrator policy to a user"
+  description = " Detect attaching an administrator policy to a user."
+  tags = ["aws", "hashitalk","gitops"]
+  condition = "aws.eventName=\"AttachUserPolicy\" and not aws.errorCode exists and jevt.value[/requestParameters/policyArn]=\"arn:aws:iam::aws:policy/AdministratorAccess\""
+  output    = "An administrator policy has been attached to an user (requesting user=%aws.user, requesting IP=%aws.sourceIP, AWS region=%aws.region,arn=%jevt.value[/userIdentity/arn], user attached to=%jevt.value[/requestParameters/userName])"
+  priority  = "notice"
+  append    = "true"
+  source    = "aws_cloudtrail" // syscall or k8s_audit
+} */
