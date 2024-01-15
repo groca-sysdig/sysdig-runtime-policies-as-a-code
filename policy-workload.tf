@@ -7,7 +7,7 @@ resource "sysdig_secure_policy" "workload-policy-hasthitalk" {
   runbook = "https://runbook.com"
 
   // Scope selection
-  scope = "container.id != \"\""
+  scope = "kubernetes.namespace.name= shell-demo"
 
   // Rule selection
   rule_names = ["gitops - Terminal shell in container","gitops - Connect EC2 Instance Metadata from container"]
