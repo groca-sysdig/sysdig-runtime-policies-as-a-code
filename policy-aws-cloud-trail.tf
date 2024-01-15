@@ -1,6 +1,6 @@
 resource "sysdig_secure_policy" "aws-policy-hashitalk" {
 
-  name = "[GRO] aws-policy-gitops"
+  name = "[GRO]aws-policy-hashitalk"
   type = "aws_cloudtrail"
   description = "Custom managed policy operated with GitOps approach: GitHub actions + TF"
   severity = 4
