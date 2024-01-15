@@ -10,7 +10,7 @@ resource "sysdig_secure_policy" "workload-policy-hasthitalk" {
   scope = "container.id != \"\""
 
   // Rule selection
-  rule_names = ["gitops - Terminal shell in container"]
+  rule_names = ["gitops - Terminal shell in container","gitops - Connect EC2 Instance Metadata from container"]
 
   actions {
     capture {
