@@ -1,7 +1,7 @@
-resource "sysdig_secure_policy" "container-policy-gitops" {
-  name = "list-matching-policy-gitops"
+resource "sysdig_secure_policy" "container-policy-hashitalk" {
+  name = "list-matching-policy-hashitalk"
   type = "list_matching"
-  description = "Custom container managed policy operated with GitOps approach: GitHub actions + TF"
+  description = "Custom container managed policy operated with Gitops approach: GitHub actions + TF"
   severity = 4
   enabled = true
   runbook = "https://runbook.com"

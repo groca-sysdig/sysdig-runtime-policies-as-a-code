@@ -1,6 +1,6 @@
-resource "sysdig_secure_policy" "workload-policy-gitops" {
+resource "sysdig_secure_policy" "workload-policy-hasthitalk" {
 
-  name = "workload-policy-gitops"
+  name = "workload-policy-hashitalk"
   description = "custom Falco managed policy for Workload"
   severity = 4
   enabled = true
@@ -14,7 +14,7 @@ resource "sysdig_secure_policy" "workload-policy-gitops" {
 
   actions {
     capture {
-      name = "gitops-security-capture"
+      name = "hashitalk-security-capture"
       seconds_before_event = 5
       seconds_after_event = 10
     }

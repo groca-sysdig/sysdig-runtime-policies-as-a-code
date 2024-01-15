@@ -1,4 +1,4 @@
-resource "sysdig_secure_policy" "aws-policy-gitops" {
+resource "sysdig_secure_policy" "aws-policy-hashitalk" {
 
   name = "aws-policy-gitops"
   type = "aws_cloudtrail"
