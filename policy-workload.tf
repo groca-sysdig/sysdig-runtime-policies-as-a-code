@@ -7,7 +7,7 @@ resource "sysdig_secure_policy" "workload-policy-hasthitalk" {
   runbook = "https://runbook.com"
 
   // Scope selection
-  scope = "container.id = 7f3f9c219801"
+  scope = "kubernetes.namespace.name= \"shell-demo\"
 
 
   // Rule selection
