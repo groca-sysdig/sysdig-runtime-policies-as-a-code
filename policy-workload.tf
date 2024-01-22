@@ -1,6 +1,6 @@
 resource "sysdig_secure_policy" "workload-policy-hasthitalk" {
 
-  name = "gitops-workload-policy"
+  name = "hashitalk-workload-policy"
   description = "custom Falco managed policy for Workload"
   severity = 4
   enabled = true
