@@ -1,14 +1,9 @@
-
 resource "sysdig_secure_macro" "http_port" {
   name = "web_port"
   condition = "fd.sport=80"
 }
 
-resource "sysdig_secure_macro" "https_port" {
-  name = "web_port"
-  condition = "or fd.sport=443"
-  append = true # default: false
-}
+
 ## Falco workload Rule 1
 resource "sysdig_secure_rule_falco" "falco_example_rule" {
   name        = "gitops - Terminal shell in container" // ID
