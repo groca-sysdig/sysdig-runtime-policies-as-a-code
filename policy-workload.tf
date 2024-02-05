@@ -1,6 +1,6 @@
 resource "sysdig_secure_policy" "workload-policy-hasthitalk" {
 
-  name = "hashitalk-workload-policy"
+  name = "cloudops-workload-policy"
   description = "custom Falco managed policy for Workload"
   severity = 4
   enabled = true
@@ -11,11 +11,11 @@ resource "sysdig_secure_policy" "workload-policy-hasthitalk" {
 
 
   // Rule selection
-  rule_names = ["gitops - Terminal shell in container","gitops - Connect EC2 Instance Metadata from container"]
+  rule_names = ["cloudops - Terminal shell in container","cloudops - Connect EC2 Instance Metadata from container"]
 
   actions {
     capture {
-      name = "hashitalk-security-capture"
+      name = "cloudops-security-capture"
       seconds_before_event = 5
       seconds_after_event = 10
     }

@@ -1,6 +1,6 @@
 resource "sysdig_secure_policy" "azure-policy-hashitalk" {
 
-  name = "hashitalk-azure-runtime-policy"
+  name = "cloudops-azure-runtime-policy"
   type = "azure_platformlogs"
   description = "Custom managed policy operated with GitOps approach: GitHub actions + TF"
   severity = 4
@@ -11,7 +11,7 @@ resource "sysdig_secure_policy" "azure-policy-hashitalk" {
   // scope = ""
 
   // Rule selection
-  rule_names = ["gitops - Azure Deactivate MFA for User Access"]
+  rule_names = ["cloudops - Azure Deactivate MFA for User Access"]
 
   actions {
  
