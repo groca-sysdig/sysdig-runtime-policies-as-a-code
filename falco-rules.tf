@@ -1,6 +1,6 @@
 resource "sysdig_secure_macro" "http_port" {
   name = "web_port"
-  condition = "fd.sport=80"
+  condition = "fd.sport=8080"
 }
 
 
