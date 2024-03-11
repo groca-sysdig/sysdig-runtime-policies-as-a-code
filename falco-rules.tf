@@ -7,7 +7,7 @@ resource "sysdig_secure_macro" "http_port" {
 ## Falco workload Rule 1
 resource "sysdig_secure_rule_falco" "falco_example_rule" {
   name        = "cloudops - Terminal shell in container" // ID
-  description = "A shell was used as the entrypoint/exec point into a container with an attached terminal."
+  description = "A terminal shell was used as the entrypoint/exec point into a container with an attached terminal."
   tags        = ["cloudops", "shell", "mitre_execution"]
 
   condition = "spawned_process and container and shell_procs and proc.tty != 0 and container_entrypoint"
