@@ -21,7 +21,7 @@ resource "sysdig_secure_policy" "workload-policy-hasthitalk" {
     }
   }
   
-  #  notification_channels = [10000]
+  notification_channels = [41677]
 ## This is to be added if you want to create rules at the same tie as policies
     depends_on = [
       sysdig_secure_rule_falco.falco_example_rule,
